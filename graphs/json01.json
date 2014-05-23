@@ -1,0 +1,51 @@
+{
+    "properties": {
+        "name": "json01",
+        "id": "json01",
+        "project": "jsons",
+        "environment": {
+            "type": "noflo-browser"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "core/Repeat_laoyy": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "core/Repeat",
+                "x": 324,
+                "y": 216
+            }
+        },
+        "prompts/Alert_npfei": {
+            "component": "prompts/Alert",
+            "metadata": {
+                "label": "prompts/Alert",
+                "x": 468,
+                "y": 216
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/Repeat_laoyy",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "prompts/Alert_npfei",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "Hello, World!",
+            "tgt": {
+                "process": "core/Repeat_laoyy",
+                "port": "in"
+            }
+        }
+    ]
+}
